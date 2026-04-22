@@ -3,42 +3,28 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
 
 export function Hero() {
   const { t, language } = useLanguage();
-  const isRTL = language === "ar";
   const partners = t("partners") || [];
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Defer video src loading until after page paint for faster LCP
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Set src after initial paint so the poster image loads first
-    const timer = setTimeout(() => {
-      video.src = "/videos/hero-plastic.mp4";
-      video.load();
-      video.play().catch(() => {/* autoplay blocked, fine */});
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <section id="home" className="relative min-h-[85vh] md:h-[900px] flex flex-col justify-start overflow-hidden bg-black py-32 md:py-0">
       {/* Cinematic Office/Industrial Background */}
       <div className="absolute inset-0 z-0">
         <video
-          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover opacity-60"
-        />
+        >
+          <source
+            src="https://res.cloudinary.com/dys2z2j7s/video/upload/q_auto,f_auto,w_1280/v1776870624/hero-plastic_wsfhb7.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 md:from-black/80 via-black/60 to-black/20 md:to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
       </div>
@@ -81,7 +67,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 }
