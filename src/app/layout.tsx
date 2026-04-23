@@ -20,6 +20,11 @@ const siteUrl = "https://www.azhar-plastics.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/azhar-cons-logo.png",
+    shortcut: "/azhar-cons-logo.png",
+    apple: "/azhar-cons-logo.png",
+  },
   title: {
     default: "Azhar Plastics | Exclusive Plastics & Packaging Representation in Morocco",
     template: "%s | Azhar Plastics",
