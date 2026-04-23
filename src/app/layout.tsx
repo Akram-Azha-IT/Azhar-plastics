@@ -105,6 +105,9 @@ export const metadata: Metadata = {
     images: ["/azhar-plastic.png"],
     creator: "@azharplastics",
   },
+  verification: {
+    google: "mixFCI3zqjEvnqnXb7qFwaZ31f9cOapY3plnIMTmLzw",
+  },
   other: {
     "geo.region": "MA",
     "geo.placename": "Mohammedia, Morocco",
