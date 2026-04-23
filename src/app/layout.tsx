@@ -16,7 +16,8 @@ const cairo = Cairo({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.azhar-plastics.com";
+// Canonical site URL (set `NEXT_PUBLIC_SITE_URL` on Vercel to avoid hardcoding).
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://azharplastics.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
