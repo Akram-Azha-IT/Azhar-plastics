@@ -16,7 +16,7 @@ const cairo = Cairo({
   display: "swap",
 });
 
-const siteUrl = "https://www.azhar-plastics.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.azhar-plastics.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
