@@ -7,7 +7,7 @@ import { useAutoScroll } from "@/hooks/useAutoScroll";
 export function WhyChoose() {
   const { t } = useLanguage();
   const whyUs = t("whyUs") || [];
-  const autoScrollProps = useAutoScroll(2400);
+  const { autoScrollProps, activeIndex } = useAutoScroll(2400);
 
   return (
     <section id="why" className="py-24 lg:py-32 bg-gray-50 flex flex-col items-center">
@@ -34,12 +34,14 @@ export function WhyChoose() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="relative group p-10 bg-white border border-gray-200 hover:border-primary border-t-4 border-t-transparent hover:border-t-primary transition-all duration-300 h-full shadow-sm w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center"
+              className="relative group p-10 bg-white border border-gray-200 hover:border-primary data-[active=true]:border-primary border-t-4 border-t-transparent hover:border-t-primary data-[active=true]:border-t-primary focus:outline-none transition-all duration-300 h-full shadow-sm w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center"
+              tabIndex={0}
+              data-active={activeIndex === i}
             >
-              <div className="w-16 h-16 bg-gray-50 flex items-center justify-center mb-8 border border-gray-100 group-hover:bg-primary transition-colors duration-300">
+              <div className="w-16 h-16 bg-gray-50 flex items-center justify-center mb-8 border border-gray-100 group-hover:bg-primary group-data-[active=true]:bg-primary transition-colors duration-300">
                 <img 
                   src={w.icon} 
-                  className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all" 
+                  className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert group-data-[active=true]:brightness-0 group-data-[active=true]:invert transition-all" 
                   alt={w.title} 
                 />
               </div>

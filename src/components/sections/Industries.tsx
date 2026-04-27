@@ -8,7 +8,7 @@ import { useAutoScroll } from "@/hooks/useAutoScroll";
 export function Industries() {
   const { t } = useLanguage();
   const industries = t("industries") || [];
-  const autoScrollProps = useAutoScroll(2600);
+  const { autoScrollProps, activeIndex } = useAutoScroll(2600);
 
   return (
     <section id="industries" className="py-24 lg:py-40 bg-white relative border-t border-slate-200">
@@ -40,10 +40,12 @@ export function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className="group w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center"
+              className="group w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center focus:outline-none"
+              tabIndex={0}
+              data-active={activeIndex === i}
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between py-8 md:py-10 lg:py-14 border border-slate-200 md:border-0 md:border-b md:border-slate-200 cursor-pointer transition-colors duration-500 hover:bg-slate-50 px-6 md:-mx-4 lg:px-8 lg:-mx-8 h-48 md:h-auto bg-white md:bg-transparent rounded-sm md:rounded-none relative overflow-hidden group">
-                <div className="absolute inset-0 bg-slate-50 md:hidden opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex flex-col md:flex-row md:items-center justify-between py-8 md:py-10 lg:py-14 border border-slate-200 md:border-0 md:border-b md:border-slate-200 cursor-pointer transition-colors duration-500 hover:bg-slate-50 group-data-[active=true]:bg-slate-50 px-6 md:-mx-4 lg:px-8 lg:-mx-8 h-48 md:h-auto bg-white md:bg-transparent rounded-sm md:rounded-none relative overflow-hidden">
+                <div className="absolute inset-0 bg-slate-50 md:hidden opacity-0 group-hover:opacity-100 group-data-[active=true]:opacity-100 transition-opacity" />
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 lg:gap-12 w-full relative z-10">
                   <span className="text-base font-semibold text-primary md:text-gray-700 uppercase tracking-wider w-8 lg:w-12">
                     0{i + 1}

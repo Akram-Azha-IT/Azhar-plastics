@@ -1,8 +1,47 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 export function useAutoScroll(delay = 3000) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const updateActiveIndex = useCallback(() => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, clientWidth, scrollWidth, children } = scrollRef.current;
+    
+    // If not scrollable (e.g. desktop), no active index
+    if (scrollWidth <= clientWidth + 10) {
+      if (activeIndex !== -1) setActiveIndex(-1);
+      return;
+    }
+
+    const containerCenter = scrollLeft + clientWidth / 2;
+    let minDiff = Infinity;
+    let closestIndex = 0;
+
+    Array.from(children).forEach((child, index) => {
+      const childElement = child as HTMLElement;
+      const childCenter = childElement.offsetLeft + childElement.offsetWidth / 2;
+      const diff = Math.abs(containerCenter - childCenter);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIndex = index;
+      }
+    });
+
+    if (closestIndex !== activeIndex) {
+      setActiveIndex(closestIndex);
+    }
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', updateActiveIndex, { passive: true });
+      setTimeout(updateActiveIndex, 100);
+      return () => el.removeEventListener('scroll', updateActiveIndex);
+    }
+  }, [updateActiveIndex]);
 
   useEffect(() => {
     // Initial nudge to show it's a carousel
@@ -49,5 +88,5 @@ export function useAutoScroll(delay = 3000) {
     onTouchEnd: () => setIsPaused(false),
   };
 
-  return autoScrollProps;
+  return { autoScrollProps, activeIndex };
 }

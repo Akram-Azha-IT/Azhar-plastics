@@ -8,7 +8,7 @@ import { useAutoScroll } from "@/hooks/useAutoScroll";
 export function Products() {
   const { t } = useLanguage();
   const offerings = t("offerings") || [];
-  const autoScrollProps = useAutoScroll(2200);
+  const { autoScrollProps, activeIndex } = useAutoScroll(2200);
 
   return (
     <section id="products" className="py-24 lg:py-32 bg-white relative">
@@ -44,14 +44,16 @@ export function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group h-full w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center"
+              className="group h-full w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center focus:outline-none"
+              tabIndex={0}
+              data-active={activeIndex === i}
             >
-              <div className="bg-gray-50 border border-gray-200 p-8 h-full flex flex-col hover:border-primary transition-colors duration-300 relative">
-                <span className="absolute top-8 right-8 text-4xl font-black text-gray-200 group-hover:text-primary/20 transition-colors">
+              <div className="bg-gray-50 border border-gray-200 p-8 h-full flex flex-col group-hover:border-primary group-data-[active=true]:border-primary transition-colors duration-300 relative">
+                <span className="absolute top-8 right-8 text-4xl font-black text-gray-200 group-hover:text-primary/20 group-data-[active=true]:text-primary/20 transition-colors">
                   0{i + 1}
                 </span>
 
-                <h3 className="text-xl font-bold text-accent mb-4 group-hover:text-primary transition-colors leading-tight pr-12">
+                <h3 className="text-xl font-bold text-accent mb-4 group-hover:text-primary group-data-[active=true]:text-primary transition-colors leading-tight pr-12">
                   {o.title}
                 </h3>
                 <p className="text-gray-700 text-base leading-relaxed mb-8">
