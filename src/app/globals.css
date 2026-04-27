@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ffffff;
-  --color-primary-dark: #e4e4e7; /* zinc-200 */
-  --color-primary-light: #f4f4f5; /* zinc-100 */
-  --color-accent: #000000;
-  --color-surface: #09090b; /* zinc-950 */
-  --color-background: #000000;
-  --color-foreground: #ffffff;
+  --color-primary: #00965e; /* Nexeo Green */
+  --color-primary-dark: #007a4c; /* Nexeo Green Darker */
+  --color-primary-light: #33ab7e; /* Nexeo Green Lighter */
+  --color-accent: #504f51; /* Nexeo Gray */
+  --color-surface: #f4f4f4; /* Nexeo Light Gray Surface */
+  --color-background: #ffffff;
+  --color-foreground: #333333; /* Nexeo Text Color */
+  
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
+    --background: #ffffff;
+    --foreground: #334155;
   }
 
   body {

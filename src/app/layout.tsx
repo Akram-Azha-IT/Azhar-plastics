@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Cairo } from "next/font/google";
+import { Montserrat, Cairo } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import Script from "next/script";
 
-const inter = Inter({
-  variable: "--font-inter",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,9 +22,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://azharplastics.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: "/azhar-cons-logo.png",
-    shortcut: "/azhar-cons-logo.png",
-    apple: "/azhar-cons-logo.png",
+    icon: "/azharplastics-logo.png",
+    shortcut: "/azharplastics-logo.png",
+    apple: "/azharplastics-logo.png",
   },
   title: {
     default: "Azhar Plastics | Exclusive Plastics & Packaging Representation in Morocco",
@@ -121,7 +121,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Azhar Plastics",
   url: siteUrl,
-  logo: `${siteUrl}/azhar-cons-logo.png`,
+  logo: `${siteUrl}/azharplastics-logo.png`,
   description:
     "Exclusive representative in Morocco and North Africa for world-leading plastics raw material and processing technology manufacturers.",
   address: {
@@ -167,7 +167,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${cairo.variable} font-sans min-h-full flex flex-col antialiased`}
+        className={`${montserrat.variable} ${cairo.variable} font-sans min-h-full flex flex-col antialiased`}
         suppressHydrationWarning
       >
         <LanguageProvider>{children}</LanguageProvider>

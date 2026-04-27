@@ -47,7 +47,7 @@ export function WhyChoose() {
               <h3 className="text-xl font-bold text-accent mb-4">
                 {w.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <p className="text-gray-700 leading-relaxed text-base">
                 {w.desc}
               </p>
             </motion.div>

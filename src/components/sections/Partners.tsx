@@ -11,7 +11,7 @@ export function Partners() {
   const autoScrollProps = useAutoScroll(2000);
 
   return (
-    <section id="partners" className="py-24 lg:py-40 bg-black relative border-t border-white/10">
+    <section id="partners" className="py-24 lg:py-40 bg-white relative border-t border-slate-200">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
           
@@ -22,24 +22,24 @@ export function Partners() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-light text-white tracking-tighter mb-6 leading-tight"
+                className="text-4xl md:text-5xl font-normal text-black tracking-normal mb-6 leading-tight"
               >
                 {t("partners.title1")} <br className="hidden lg:block"/>
-                <span className="text-zinc-500">{t("partners.title2")}</span>
+                <span className="text-primary">{t("partners.title2")}</span>
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-lg text-zinc-400 font-light max-w-sm leading-relaxed mb-8"
+                className="text-lg text-gray-800 font-normal max-w-sm leading-relaxed mb-8"
               >
                 {t("partners.desc")}
               </motion.p>
               
-              <div className="hidden lg:flex items-center gap-4 text-[10px] font-semibold text-zinc-600 uppercase tracking-[0.2em]">
+              <div className="hidden lg:flex items-center gap-4 text-base font-semibold text-gray-700 uppercase tracking-wider">
                 {partners.length} Global Partners
-                <div className="flex-1 h-px bg-white/10" />
+                <div className="flex-1 h-px bg-slate-100" />
               </div>
             </div>
           </div>
@@ -59,42 +59,42 @@ export function Partners() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group bg-black border border-white/10 p-8 hover:bg-white/[0.02] transition-colors duration-500 flex flex-col relative overflow-hidden cursor-pointer w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center"
+                className="group bg-white border border-slate-200 p-8 hover:bg-slate-50 transition-colors duration-500 flex flex-col relative overflow-hidden cursor-pointer w-[80vw] sm:w-[340px] md:w-auto shrink-0 snap-center"
               >
                 {/* Background Glow Effect on Hover */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none transform translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-slate-50 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none transform translate-x-1/2 -translate-y-1/2" />
 
                 {/* Top Row: Logo & Origin */}
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-8 mb-16 relative z-10">
-                  <div className="h-16 flex items-center justify-start mix-blend-screen opacity-50 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="h-16 flex items-center justify-start mix-blend-multiply opacity-50 group-hover:opacity-100 transition-opacity duration-500">
                     <img 
                       src={p.logo} 
                       alt={p.name} 
-                      className="h-full w-auto max-w-[140px] md:max-w-[180px] object-contain grayscale invert" 
+                      className="h-full w-auto max-w-[140px] md:max-w-[180px] object-contain grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0" 
                     />
                   </div>
                   
-                  <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
-                    <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-[0.2em]">{p.country}</span>
-                    <span className="text-sm grayscale group-hover:grayscale-0 transition-all duration-500" title={p.country}>{p.flag}</span>
+                  <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <span className="text-base font-semibold text-gray-800 uppercase tracking-wider">{p.country}</span>
+                    <span className="text-base grayscale group-hover:grayscale-0 transition-all duration-500" title={p.country}>{p.flag}</span>
                   </div>
                 </div>
 
                 {/* Bottom Row: Content */}
                 <div className="mt-auto relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-light tracking-tight text-white mb-4">
+                  <h3 className="text-2xl md:text-3xl font-normal tracking-normal text-black mb-4">
                     {p.name}
                   </h3>
-                  <p className="text-zinc-400 text-sm md:text-base font-light leading-relaxed max-w-xl mb-10">
+                  <p className="text-gray-800 text-base md:text-base font-normal leading-relaxed max-w-xl mb-10">
                     {p.desc}
                   </p>
                   
-                  <div className="flex items-center justify-between border-t border-white/10 pt-6">
-                    <span className="text-[11px] font-semibold text-zinc-500 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
+                  <div className="flex items-center justify-between border-t border-slate-200 pt-6">
+                    <span className="text-base font-semibold text-primary uppercase tracking-wider group-hover:text-black transition-colors duration-300">
                       Visit Website
                     </span>
-                    <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-colors duration-300">
-                      <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-black transition-colors duration-300" />
+                    <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-colors duration-300">
+                      <ArrowUpRight className="w-4 h-4 text-gray-800 group-hover:text-black transition-colors duration-300" />
                     </div>
                   </div>
                 </div>

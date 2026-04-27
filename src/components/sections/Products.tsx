@@ -27,7 +27,7 @@ export function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-gray-600 font-medium max-w-2xl"
+            className="text-lg text-gray-700 font-medium max-w-2xl"
           >
             {t("core.desc")}
           </motion.p>
@@ -54,7 +54,7 @@ export function Products() {
                 <h3 className="text-xl font-bold text-accent mb-4 group-hover:text-primary transition-colors leading-tight pr-12">
                   {o.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                <p className="text-gray-700 text-base leading-relaxed mb-8">
                   {o.desc}
                 </p>
 
@@ -62,7 +62,7 @@ export function Products() {
                   <div className="h-px bg-gray-200 w-full mb-6" />
                   <ul className="space-y-3">
                     {o.items.map((item: string, j: number) => (
-                      <li key={j} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
+                      <li key={j} className="flex items-start gap-3 text-base text-gray-700 font-medium">
                         <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span>{item}</span>
                       </li>

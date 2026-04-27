@@ -15,6 +15,12 @@ const translations: Record<Language, any> = {
     "hero.tag": "Azhar Plastics",
     "hero.title1": "Redefining ",
     "hero.title2": "Plastics Production",
+    "hero.carousel": [
+      "Plastics Production",
+      "Raw Materials",
+      "Advanced Technologies",
+      "Industrial Solutions"
+    ],
     "hero.desc": "Exclusive representation for world-leading manufacturers of plastics raw materials and advanced processing technologies.",
     "hero.btnConsult": "Request Consultation",
     "hero.btnPartners": "View Partners",
@@ -83,8 +89,14 @@ const translations: Record<Language, any> = {
     "nav.industries": "Secteurs",
     "nav.contact": "Contact",
     "hero.tag": "Azhar Plastics",
-    "hero.title1": "Redéfinir la ",
-    "hero.title2": "Production Plastique",
+    "hero.title1": "Redéfinir ",
+    "hero.title2": "la Production Plastique",
+    "hero.carousel": [
+      "la Production Plastique",
+      "les Matières Premières",
+      "les Technologies Avancées",
+      "les Solutions Industrielles"
+    ],
     "hero.desc": "Représentation exclusive de fabricants mondiaux de matières premières plastiques et de technologies de transformation avancées.",
     "hero.btnConsult": "Demander une Consultation",
     "hero.btnPartners": "Voir nos Partenaires",
@@ -155,6 +167,12 @@ const translations: Record<Language, any> = {
     "hero.tag": "Azhar Plastics",
     "hero.title1": "Neudefinition der ",
     "hero.title2": "Kunststoffproduktion",
+    "hero.carousel": [
+      "Kunststoffproduktion",
+      "Rohstoffexzellenz",
+      "Fortschrittlichen Technologien",
+      "Industriellen Lösungen"
+    ],
     "hero.desc": "Exklusive Vertretung für weltweit führende Hersteller von Kunststoffrohstoffen und fortschrittlichen Verarbeitungstechnologien.",
     "hero.btnConsult": "Beratung anfordern",
     "hero.btnPartners": "Unsere Partner ansehen",
@@ -225,6 +243,12 @@ const translations: Record<Language, any> = {
     "hero.tag": "أزهار للبلاستيك",
     "hero.title1": "إعادة تعريف ",
     "hero.title2": "إنتاج البلاستيك",
+    "hero.carousel": [
+      "إنتاج البلاستيك",
+      "المواد الخام",
+      "التقنيات المتقدمة",
+      "الحلول الصناعية"
+    ],
     "hero.desc": "التمثيل الحصري للشركات العالمية الرائدة في تصنيع المواد الخام البلاستيكية وتقنيات المعالجة المتقدمة.",
     "hero.btnConsult": "طلب استشارة",
     "hero.btnPartners": "عرض الشركاء",

@@ -1,4 +1,4 @@
-// Converts azhar-cons-logo.png into a proper favicon.ico with resized PNG data
+// Converts azharplastics-logo.png into a proper favicon.ico with resized PNG data
 import sharp from 'sharp';
 import { writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const pngPath = resolve(__dirname, 'public', 'azhar-cons-logo.png');
+const pngPath = resolve(__dirname, 'public', 'azharplastics-logo.png');
 const icoPath = resolve(__dirname, 'src', 'app', 'favicon.ico');
 const iconPngPath = resolve(__dirname, 'src', 'app', 'icon.png');
 
